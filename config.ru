@@ -9,4 +9,5 @@ use Rack::MethodOverride
 use Rack::Session::Cookie
 use SessionsController
 use JerseyController
+use UsersController
 run ApplicationController
