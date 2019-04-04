@@ -1,5 +1,3 @@
 class User
-    def initialize
-        
-    end
+  :has_secure_password
 end
