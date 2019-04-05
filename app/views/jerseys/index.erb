@@ -1,0 +1,7 @@
+<% @jerseys.each do |jersey| %>
+  <%= jersey.name %><br />
+  <%= jersey.capacity %> <br />
+  <a href="/jerseys/<%=jersey.id%>/edit">Edit</a>
+  <br />
+  <br />
+<% end %>
