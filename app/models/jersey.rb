@@ -1,3 +1,3 @@
-class Jersey
+class Jersey < ActiveRecord::Base
     belongs_to :user
 end

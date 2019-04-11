@@ -5,9 +5,8 @@ require_relative './config/environment'
 #end
 
 
-use Rack::MethodOverride
-use Rack::Session::Cookie
-use SessionsController
+#use Rack::MethodOverride
+#use Rack::Session::Cookie
 use JerseyController
 use UsersController
 run ApplicationController
