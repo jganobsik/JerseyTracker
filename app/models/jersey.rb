@@ -1,5 +1,3 @@
 class Jersey
-    def initialize
-        
-    end
+    belongs_to :user
 end
