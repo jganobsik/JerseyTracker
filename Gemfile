@@ -15,3 +15,5 @@ gem 'pry'
 gem 'require_all'
 gem 'shotgun'
 gem 'bcrypt'
+gem 'thin'
+gem "tux"

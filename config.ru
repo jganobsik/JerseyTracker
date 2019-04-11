@@ -1,12 +1,10 @@
-require_relative './config/environment'
+require './config/environment'
 
 #if ActiveRecord::Migrator.needs_migration?
-   # raise 'Migrations are pending. Run `rake db:migrate` to resolve'
+ # raise 'Migrations are pending. Run `rake db:migrate` to resolve the issue.'
 #end
 
-
-#use Rack::MethodOverride
-#use Rack::Session::Cookie
-use JerseyController
-use UsersController
+use Rack::MethodOverride
+use JerseyController 
+use UsersController   
 run ApplicationController
