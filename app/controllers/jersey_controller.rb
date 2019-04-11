@@ -6,6 +6,6 @@ class JerseyController < ApplicationController
       end
     
       get "/jerseys/new" do
-        erb :jerseys/new'
+        erb :'jerseys/new'
       end
 end

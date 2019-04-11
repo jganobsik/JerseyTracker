@@ -4,6 +4,8 @@ class UsersController < ApplicationController
         if !logged_in?
           redirect '/jerseys'
         end
+      end
+    
     
     get '/users/:id' do
         if !logged_in?
