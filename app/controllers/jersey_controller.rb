@@ -28,9 +28,17 @@ class JerseyController < ApplicationController
       end
 
 
-  get "/jerseys/:id" do
+     get "/jerseys/:id" do
  
-    @jersey = Jersey.find(params[:id])
-    erb :'jerseys/show'
-  end
+       @jersey = Jersey.find(params[:id])
+       erb :'jerseys/show'
+    end
+
+
+    delete '/jerseys/:id' do
+      @jersey = Jersey.delete(params[:id])
+      redirect to("/")
+     end
+
+
 end
