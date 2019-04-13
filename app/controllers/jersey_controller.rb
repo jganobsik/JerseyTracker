@@ -8,4 +8,10 @@ class JerseyController < ApplicationController
       get "/jerseys/new" do
         erb :'jerseys/new'
       end
+
+      post "/jerseys" do
+    
+        Jersey.create(params)
+        redirect "/jerseys"
+      end
 end
