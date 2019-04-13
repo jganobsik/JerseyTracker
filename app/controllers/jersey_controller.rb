@@ -26,4 +26,11 @@ class JerseyController < ApplicationController
         @jersey.update(params.select{|j|j=="title" || j=="player" || j=="number" || j=="sport"})
         redirect "/jerseys/#{@jersey.id}"
       end
+
+
+  get "/jerseys/:id" do
+ 
+    @jersey = Jersey.find(params[:id])
+    erb :'jerseys/show'
+  end
 end
