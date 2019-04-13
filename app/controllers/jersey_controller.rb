@@ -14,4 +14,16 @@ class JerseyController < ApplicationController
         Jersey.create(params)
         redirect "/jerseys"
       end
+
+      get "/jerseys/:id/edit" do
+        @jersey = Jersey.find(params[:id])
+        erb :'jerseys/edit'
+      end
+
+      post "/jerseys/:id" do
+        
+        @jersey = Jersey.find(params[:id])
+        @jersey.update(params.select{|j|j=="title" || j=="player" || j=="number" || j=="sport"})
+        redirect "/jerseys/#{@jersey.id}"
+      end
 end

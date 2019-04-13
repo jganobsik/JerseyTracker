@@ -1,0 +1,19 @@
+<h1>Edit <%= @jersey.title %></h1>
+
+<form action="/jerseys/<%=@jersey.id %>" method="POST">
+  <label> Jersey Title </label>
+  <input type="text" name="title"> </br>
+
+  <label> Player </label>
+  <input type="text" name="player"> </br>
+
+  <label> Number </label>
+  <input type="text" name="player_number"> </br>
+
+  <label> Sport </label>
+  <input type="text" name="sport"> </br>
+
+  <input type="submit" value="Update">
+
+
+</form>
