@@ -1,0 +1,19 @@
+<body>
+      <% if logged_in? %>
+
+        <a href="/jerseys/new"> Add a Jersey</a>
+        <a href="/logout"> Log Out </a>
+        <p>Welcome! %></p>
+
+      <% else %>
+        <a href="/signup">Sign Up</a>
+        <a href="/login"> Sign In </a>
+      <%end %>
+
+    
+
+   
+      <%= yield %> 
+    
+
+    </body>
