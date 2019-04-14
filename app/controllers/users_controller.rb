@@ -49,7 +49,7 @@ class UsersController < ApplicationController
       else
         @user = User.create(:email => params[:email], :password => params[:password])
         session[:user_id] = @user.id
-        redirect '/jerseys/index'
+        redirect '/jerseys'
       end
     end
 

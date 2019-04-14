@@ -6,12 +6,12 @@ class JerseyController < ApplicationController
       end
     
       get "/jerseys/new" do
+        @user = current_user
         erb :'jerseys/new'
       end
 
       post "/jerseys" do
-    
-        Jersey.create(params)
+        current_user.jerseys.create(params)
         redirect "/jerseys"
       end
 
@@ -40,5 +40,9 @@ class JerseyController < ApplicationController
       redirect to("/")
      end
 
-
+ private
+     def is_owner?
+      current_jersey = Jersey.find(params[:id])
+      current_user.jerseys.include?(current_jersey)
+   end
 end
