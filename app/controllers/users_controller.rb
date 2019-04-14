@@ -28,7 +28,7 @@ class UsersController < ApplicationController
     post '/login' do
         user = User.find_by(:email => params[:email])
         if user && user.authenticate(params[:password])
-           session[:email] = user.email  
+          session[:user_id] = user.id
            redirect '/jerseys'
         else
             redirect_to '/signup'
