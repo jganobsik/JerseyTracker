@@ -1,14 +1,14 @@
 class UsersController < ApplicationController
 
     get '/users/:id' do
-        if !logged_in?
+        if logged_in?
           redirect '/jerseys'
         end
       end
     
     
     get '/users/:id' do
-        if !logged_in?
+        if logged_in?
           redirect '/jerseys'
         end
     
@@ -49,7 +49,7 @@ class UsersController < ApplicationController
       else
         @user = User.create(:email => params[:email], :password => params[:password])
         session[:user_id] = @user.id
-        redirect '/jerseys'
+        redirect '/jerseys/index'
       end
     end
   
