@@ -1,5 +1,5 @@
 <h1>Edit <%= @jersey.title %></h1>
-
+<% if is_owner? %>
 <form action="/jerseys/<%=@jersey.id %>" method="POST">
   <label> Jersey Title </label>
   <input type="text" name="title"> </br>
@@ -19,3 +19,7 @@
  <input type="submit" value="Delete Jersey">
 </form>
 </form>
+
+<% else %>
+<p> you do not own this jersey </p>
+<% end %>
