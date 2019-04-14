@@ -28,8 +28,8 @@ class UsersController < ApplicationController
     post '/login' do
         user = User.find_by(:email => params[:email])
         if user && user.authenticate(params[:password])
-           sessions[:email] = user.email  
-           redirect  erb: '/jerseys/index'
+           session[:email] = user.email  
+           redirect '/jerseys'
         else
             redirect_to '/signup'
         end
@@ -50,6 +50,16 @@ class UsersController < ApplicationController
         @user = User.create(:email => params[:email], :password => params[:password])
         session[:user_id] = @user.id
         redirect '/jerseys/index'
+      end
+    end
+
+
+    get '/logout' do
+      if session[:user_id] != nil
+        session.destroy
+        redirect to '/login'
+      else
+        redirect to '/'
       end
     end
   
