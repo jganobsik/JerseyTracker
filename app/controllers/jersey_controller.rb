@@ -11,6 +11,9 @@ class JerseyController < ApplicationController
       end
 
       post "/jerseys" do
+        unless Jersey.valid_params?(params)
+          redirect "/jerseys"
+        end
         current_user.jerseys.create(params)
         redirect "/jerseys"
       end
@@ -23,6 +26,9 @@ class JerseyController < ApplicationController
       post "/jerseys/:id" do
         
         @jersey = Jersey.find(params[:id])
+        unless Jersey.valid_params?(params)
+          redirect "/jerseys"
+        end
         @jersey.update(params.select{|j|j=="title" || j=="player" || j=="number" || j=="sport"})
         redirect "/jerseys/#{@jersey.id}"
       end
