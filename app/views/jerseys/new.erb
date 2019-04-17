@@ -1,16 +1,33 @@
-<h1>Add a New Jersey</h1>
+
+<h1 class="title is-3 has-text-centered">Add a New Jersey</h1>
 
 <form action="/jerseys" method="POST">
-  <label> Jersey Title </label>
-  <input type="text" name="title"> </br>
+<div class="has-text-centered">
+<div class="field">
+  <label class="label"> Jersey Title </label>
+  <div class="control">
+  <input class="input" type="text" name="title"> </br>
+  </div>
+  </div>
 
-  <label> Player </label>
-  <input type="text" name="player"> </br>
-
-  <label> Number </label>
-  <input type="text" name="player_number"> </br>
-
-  <label> Sport </label>
-  <input type="text" name="sport"> </br>
-  <input type="submit" value="Create">
+<div class="field">
+  <label class="label"> Player </label>
+  <div class="control">
+  <input class="input" type="text" name="player"> </br>
+</div>
+  </div>
+<div class="field">
+  <label class="label"> Number </label>
+  <div class="control">
+  <input class="input" type="text" name="player_number"> </br>
+</div>
+  </div>
+<div class="field">
+  <label class="label"> Sport </label>
+  <div class="control">
+  <input class="input" type="text" name="sport"> </br>
+  </div>
+  </div>
+  <input class="button is-primary" type="submit" value="Create">
+  </div>
 </form>
