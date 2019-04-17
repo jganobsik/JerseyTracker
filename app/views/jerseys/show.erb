@@ -1,4 +1,13 @@
-  <%= @jersey.title %><br />
-  <%= @jersey.sport %> <br />
-  <%= @jersey.player %> <br />
-  <%= @jersey.player_number %> <br />
+ <div class="box">
+ <div class="media-content">
+      <div class="content has-text-centered">
+        <p>
+          <strong><%= @jersey.title %></strong>
+          <br>
+          Sport: <%= @jersey.sport %> <br>
+          Player Name: <%= @jersey.player %> <br>
+          Player Number: <%= @jersey.player_number %> <br>
+          Owner: <%= @jersey.user.email %>
+        </p>
+      </div>
+  </div>
