@@ -4,14 +4,36 @@
 <body>
       <% if logged_in? %>
 
-        <a href="/jerseys/new"> Add a Jersey</a>
-        <a href="/logout"> Log Out </a>
-        <h1>Welcome to JerseyTracker!</h1>
+       
+<div class="block">
+<section class="hero is-info">
+
+<nav class="level">
+  <!-- Left side -->
+  <div class="level-left">
+    <div class="level-item">
+    <p class="level-item"> <a class="button is-success" href="/jerseys/new"> Add a Jersey</a></p>
+    </div>
+  </div>
+    <div class="level-right">
+    <p class="level-item"> <a class="button is-danger" href="/logout"> Log Out </a></p>
+  </div>
+</nav>
+<div class="hero-body">
+<div class="container">
+        <h1 class="title is-3 has-text-centered">Welcome to JerseyTracker!</h1>
+        </div>
+      </section>
+      </div>
+      </div>
 
       <% else %>
         <a href="/signup">Sign Up</a>
         <a href="/login"> Sign In </a>
+    
       <%end %>
+
+
 
     
 
