@@ -1,7 +1,19 @@
 <% @jerseys.each do |jersey| %>
-  <%= jersey.title %><br />
-  <%= jersey.sport %> <br />
-  <a href="/jerseys/<%=jersey.id%>/edit">Edit</a>
-  <br />
-  <br />
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+        <%= jersey.title %>
+    </p>
+  </header>
+  <div class="card-content">
+    <div class="content has-text-centered">
+     <%= jersey.player %> </br>
+     <%= jersey.player_number %></br>
+     <%= jersey.sport %>
+    </div>
+  </div>
+  <footer class="card-footer">
+  <a href="/jerseys/<%=jersey.id%>/edit" class="card-footer-item">Edit</a>
+  </footer>
+</div>
 <% end %>
