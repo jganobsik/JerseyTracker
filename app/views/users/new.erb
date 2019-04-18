@@ -1,16 +1,18 @@
-<h1>Signup</h1>
+<h1 class="title is-3 has-text-centered">Signup</h1>
 
 <form action="/signup" method="POST">
+<div class="has-text-centered">
 <p>
-<label for="email"> Email: </label>
-
-<input type="text" name="email" id="email"/>
-
-<label for="password"> Password: </label>
-
-<input type="password" name="password" id="password"/>
-
+<label class="label" for="email"> Email: </label>
+<div class="control">
+<input class="input" type="text" name="email" id="email"/>
+</div>
+<label class="label" for="password"> Password: </label>
+<div class="control">
+<input class="input" type="password" name="password" id="password"/>
+</div>
 </p>
 
-<input type='submit'/>
+<input class="button is-primary" type='submit'/>
+</div>
 </form>
