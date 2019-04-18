@@ -1,6 +1,7 @@
 <h1 class="title is-3 has-text-centered">Edit <%= @jersey.title %></h1>
 <% if is_owner? %>
-<form action="/jerseys/<%=@jersey.id %>" method="POST">
+<form action="/jerseys/<%= @jersey.id %>" method="POST">
+<input id="hidden" type="hidden" name="_method" value="patch">
   <div class="has-text-centered">
 <div class="field">
   <label class="label"> Jersey Title </label>
@@ -8,7 +9,6 @@
   <input class="input" type="text" name="title"> </br>
   </div>
   </div>
-
 <div class="field">
   <label class="label"> Player </label>
   <div class="control">
@@ -28,10 +28,15 @@
   </div>
   </div>
 <input class="button is-primary" type="submit" value="Update">
- <input type="hidden" name="_method" value="DELETE">
- <input class="button is-danger" type="submit" value="Delete Jersey">
   </div>
 
+</form>
+
+<form action="/jerseys/<%= @jersey.id %>/delete" method="post">
+<div class="has-text-centered">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+  <input class="button is-danger" type="submit" value="Delete">
+  </div>
 </form>
 
 <% else %>

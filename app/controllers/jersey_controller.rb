@@ -23,25 +23,28 @@ class JerseyController < ApplicationController
         erb :'jerseys/edit'
       end
 
-      post "/jerseys/:id" do
-        
-        @jersey = Jersey.find(params[:id])
-        unless Jersey.valid_params?(params)
-          redirect "/jerseys"
+      
+        patch '/jerseys/:id' do
+          @jersey = Jersey.find(params[:id])
+          unless Jersey.valid_params?(params)
+            redirect "/jerseys"
+          end
+          @jersey.title = params[:title]
+          @jersey.player = params[:player]
+          @jersey.player_number = params[:player_number]
+          @jersey.sport = params[:sport]
+          @jersey.save
+          redirect "/jerseys/#{@jersey.id}"
         end
-        @jersey.update(params.select{|j|j=="title" || j=="player" || j=="number" || j=="sport"})
-        redirect "/jerseys/#{@jersey.id}"
-      end
 
 
      get "/jerseys/:id" do
- 
        @jersey = Jersey.find(params[:id])
        erb :'jerseys/show'
     end
 
 
-    delete '/jerseys/:id' do
+    delete '/jerseys/:id/delete' do
       @jersey = Jersey.delete(params[:id])
       redirect to("/")
      end
