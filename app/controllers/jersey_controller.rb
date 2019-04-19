@@ -55,3 +55,4 @@ class JerseyController < ApplicationController
       current_user.jerseys.include?(current_jersey)
    end
 end
+

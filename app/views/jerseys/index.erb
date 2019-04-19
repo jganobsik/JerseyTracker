@@ -1,4 +1,7 @@
-<% @jerseys.each do |jersey| %>
+<% @jerseys.each_slice(3) do |jersey_slice| %>
+<div class="columns">
+<% jersey_slice.each do |jersey|%>
+<div class="column">
 <div class="card">
   <header class="card-header">
     <p class="card-header-title is-centered">
@@ -16,5 +19,8 @@
   <a href="/jerseys/<%=jersey.id%>" class="card-footer-item">View</a>
   <a href="/jerseys/<%=jersey.id%>/edit" class="card-footer-item">Edit</a>
   </footer>
+</div>
+</div>
+<% end %>
 </div>
 <% end %>
