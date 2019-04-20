@@ -1,20 +1,20 @@
 <h1 class="title is-3 has-text-centered">Edit <%= @jersey.title %></h1>
-<% if is_owner? %>
+  <% if is_owner? %>
 <form action="/jerseys/<%= @jersey.id %>" method="POST">
 <input id="hidden" type="hidden" name="_method" value="patch">
   <div class="has-text-centered">
-<div class="field">
-  <label class="label"> Jersey Title </label>
-  <div class="control">
-  <input class="input" type="text" name="title" value="<%= @jersey.title %>"></br>
-  </div>
-  </div>
-<div class="field">
-  <label class="label"> Player </label>
-  <div class="control">
-  <input class="input" type="text" name="player" value="<%= @jersey.player%>"> </br>
-</div>
-  </div>
+    <div class="field">
+    <label class="label"> Jersey Title </label>
+      <div class="control">
+        <input class="input" type="text" name="title" value="<%= @jersey.title %>"></br>
+      </div>
+    </div>
+  <div class="field">
+     <label class="label"> Player </label>
+      <div class="control">
+      <input class="input" type="text" name="player" value="<%= @jersey.player%>"> </br>
+      </div>
+    </div>
 <div class="field">
   <label class="label"> Number </label>
   <div class="control">
