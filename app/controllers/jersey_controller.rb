@@ -12,6 +12,7 @@ class JerseyController < ApplicationController
       post "/jerseys" do
         redirect_if_not_logged_in
         unless Jersey.valid_params?(params)
+          flash[:warning] = "invalid input: title is required"
           redirect "/jerseys"
         end
         current_user.jerseys.create(params)
@@ -25,6 +26,7 @@ class JerseyController < ApplicationController
         patch '/jerseys/:id' do
           @jersey = Jersey.find(params[:id])
           unless Jersey.valid_params?(params)
+            flash[:warning] = "invalid input: title is required"
             redirect "/jerseys"
           end
           @jersey.title = params[:title]
