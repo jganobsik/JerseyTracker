@@ -15,10 +15,18 @@
   </header>
   <div class="card-content">
     <div class="content has-text-centered">
-     <%= jersey.player %> </br>
-     <%= jersey.player_number %></br>
-     <%= jersey.team %></br>
-     <%= jersey.sport %>
+     <% if  @jersey.player != nil %>
+          Player Name: <%= @jersey.player %> <br>
+          <% end %>
+          <% if  @jersey.player_number != nil %>
+          Player Number: <%= @jersey.player_number %> <br>
+          <% end %>
+           <% if  @jersey.team != nil %>
+          Team: <%= @jersey.team %></br>
+            <% end %>
+           <% if  @jersey.sport != nil %>
+          Sport: <%= @jersey.sport %> <br>
+            <% end %>
     </div>
   </div>
   <footer class="card-footer">
