@@ -33,6 +33,8 @@ class JerseyController < ApplicationController
           @jersey.player = params[:player]
           @jersey.player_number = params[:player_number]
           @jersey.sport = params[:sport]
+          @jersey.team = params[:team]
+          @jersey.picture_url = params[:picture_url]
           @jersey.save
           redirect "/jerseys/#{@jersey.id}"
         end

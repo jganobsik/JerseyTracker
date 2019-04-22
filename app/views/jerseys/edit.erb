@@ -20,7 +20,7 @@
   <div class="control">
   <input class="input" type="text" name="player_number" value="<%= @jersey.player_number%>"></br>
 </div>
-  </div>
+</div>
 <div class="field">
   <label class="label"> Sport </label>
   <div class="control">
@@ -30,13 +30,13 @@
   <div class="field">
   <label class="label"> Team </label>
   <div class="control">
-  <input class="input" type="text" name="team"> </br>
-  </div>
+  <input class="input" type="text" name="team" value="<%= @jersey.team%>"></br>
+</div>
 </div>
 <div class="field">
-  <label class="label"> Image URL (Please use Imgur to host your images) </label>
+  <label class="label"> Image URL (Please use a 3rd party image hosting service such as Imgur) </label>
   <div class="control">
-  <input class="input" type="text" name="image_url"> </br>
+  <input class="input" type="text" name="picture_url" value="<%= @jersey.picture_url%>"></br>
 </div>
 </div>
 <input class="button is-primary" type="submit" value="Update">
