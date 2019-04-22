@@ -1,13 +1,16 @@
 class JerseyController < ApplicationController
     get '/jerseys' do
+      redirect_if_not_logged_in
         @jerseys = Jersey.all
         erb :'jerseys/index'
       end
       get "/jerseys/new" do
+        redirect_if_not_logged_in
         @user = current_user
         erb :'jerseys/new'
       end
       post "/jerseys" do
+        redirect_if_not_logged_in
         unless Jersey.valid_params?(params)
           redirect "/jerseys"
         end
@@ -15,6 +18,7 @@ class JerseyController < ApplicationController
         redirect "/jerseys"
       end
       get "/jerseys/:id/edit" do
+        redirect_if_not_logged_in
         @jersey = Jersey.find(params[:id])
         erb :'jerseys/edit'
       end
@@ -31,6 +35,7 @@ class JerseyController < ApplicationController
           redirect "/jerseys/#{@jersey.id}"
         end
      get "/jerseys/:id" do
+      redirect_if_not_logged_in
        @jersey = Jersey.find(params[:id])
        erb :'jerseys/show'
     end
