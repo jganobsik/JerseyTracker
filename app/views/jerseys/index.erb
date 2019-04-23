@@ -5,7 +5,11 @@
 <div class="card">
 <div class="card-image">
     <figure class="image is-4by3">
-      <img src="images/jersey.png" alt="Placeholder image">
+    <% if jersey.picture_url == "" || jersey.picture_url == nil%>
+    <img src="images/jersey.png" alt="Placeholder image">
+    <% else %>
+     <img src="<%=jersey.picture_url%>" alt="Uploaded image">
+    <% end %>
     </figure>
   </div>
   <header class="card-header">
